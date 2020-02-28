@@ -56,7 +56,6 @@ def popularWords(text)
       text[i].match(/^[a-z']/) ? words[text[i]] = 1 : next # mathing word format
     end
   end
-  return words
   return Array.new if words.length() < 4 # return if there are less than 3 unique words
   sorted_words = words.sort_by{|k,v| v} # sorting hash by values
   return [sorted_words[-1][0],sorted_words[-2][0],sorted_words[-3][0]] #return last 3 sorted_words
