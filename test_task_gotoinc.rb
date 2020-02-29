@@ -48,7 +48,7 @@ end
 # Function that returns 3 the most popular words from the text
 def popularWords(text = "")
   words = Hash.new
-  text = text.downcase().split(/[\s,.!?:;&()*^#""]+/) # spliting sentences into words
+  text = text.downcase().split(/[\s,.!?:;&()*^#"{}]+/) # spliting sentences into words
   for i in 0.. text.length() - 1
     if words.include? text[i]
       words[text[i]] += 1
@@ -64,7 +64,7 @@ end
 
 # To check if function popularWords works uncomment the code below
 
-# correctPhrase = "Dima's Iphone look's: (like Dima's \"Iphone\"); #11, and Dima do like Iphone. Another sentence!"
+# correctPhrase = "Dima's {Iphone} look's: (like Dima's \"Iphone\"); #11, and Dima do like Iphone. Another sentence!"
 # incorrectPhrase = "Dima, like." # Contains less than 3 unique words
 #
 # print(popularWords(correctPhrase))
